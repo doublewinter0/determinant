@@ -11,6 +11,9 @@
     <title>Title</title>
 </head>
 <body>
-
+<div align="center" style="font-size: large;">
+    计算结果: ${result} <br/>
+    耗时: ${interval}
+</div>
 </body>
 </html>

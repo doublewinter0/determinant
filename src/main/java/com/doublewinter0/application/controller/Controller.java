@@ -3,6 +3,7 @@ package com.doublewinter0.application.controller;
 import com.doublewinter0.application.service.ArrayTransService;
 import com.doublewinter0.application.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,7 +23,7 @@ public class Controller {
     }
 
     @RequestMapping("/result")
-    public ModelAndView result(@RequestParam(value = "element") String element) {
+    public ModelAndView result(Model model, @RequestParam(value = "element") String element) {
 
 
         // 前台传过来的矩阵字符串
@@ -36,6 +37,10 @@ public class Controller {
         String result = compute(numerator2s, denominator2s);
         long interval = System.currentTimeMillis() - begin;
         System.out.println("耗时:" + interval + "毫秒");
+        model.addAttribute("result", result);
+        model.addAttribute("interval", interval);
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("./WEB-INF/jsp/result.jsp");
         return null;
     }
 
