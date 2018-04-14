@@ -27,7 +27,7 @@ public class StringUtil {
         BigInteger[][] twoDimen = new BigInteger[order][order];
         for (int i = 0; i < order; i++) {
             for (int j = 0; j < order; j++) {
-                twoDimen[i][j] = BigInteger.valueOf(oneDimens[ order * i + j]);
+                twoDimen[i][j] = BigInteger.valueOf(oneDimens[order * i + j]);
             }
         }
         return twoDimen;

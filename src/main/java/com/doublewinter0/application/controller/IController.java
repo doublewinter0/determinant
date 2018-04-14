@@ -5,11 +5,10 @@ import com.doublewinter0.application.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.math.BigInteger;
-import java.util.Arrays;
 
 // @RestController 这两个有什么不同?
 @Controller
@@ -68,8 +67,7 @@ public class IController {
             if (denominator.abs().equals(BigInteger.ONE)) {
                 System.out.println("所求行列式值为:" + numerator.abs());
                 return numerator.abs().toString();
-            }
-            else {
+            } else {
                 System.out.println("所求行列式值为:" + numerator.abs() + " / " + denominator.abs());
                 return numerator.abs() + " / " + denominator.abs();
             }
@@ -77,19 +75,10 @@ public class IController {
             if (denominator.abs().equals(BigInteger.ONE)) {
                 System.out.println("所求行列式值为:" + "-" + numerator.abs());
                 return "-" + numerator.abs();
-            }
-            else {
+            } else {
                 System.out.println("所求行列式值为:" + "-" + numerator.abs() + " / " + denominator.abs());
                 return "-" + numerator.abs() + " / " + denominator.abs();
             }
         }
     }
-
-    // @RequestMapping(value = "greeting", method = RequestMethod.POST)
-    @PostMapping(value = "greeting")
-    public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
-        model.addAttribute("name", name);
-        return "greeting";
-    }
-
 }
