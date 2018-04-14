@@ -33,8 +33,9 @@ repositories {
 
 dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.boot:spring-boot-starter-actuator'
+    compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
     // compile 'org.jsoup:jsoup:1.11.2'
     testCompile 'junit:junit'
     testCompile 'org.springframework.boot:spring-boot-starter-test'
-    compile 'org.springframework.boot:spring-boot-starter-actuator'
 }

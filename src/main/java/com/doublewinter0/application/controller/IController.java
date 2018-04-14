@@ -3,28 +3,28 @@ package com.doublewinter0.application.controller;
 import com.doublewinter0.application.service.ArrayTransService;
 import com.doublewinter0.application.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.math.BigInteger;
 import java.util.Arrays;
 
-@RestController
-public class Controller {
+// @RestController 这两个有什么不同?
+@Controller
+public class IController {
 
     private final ArrayTransService atService;
 
     @Autowired
-    public Controller(ArrayTransService atService) {
+    public IController(ArrayTransService atService) {
         this.atService = atService;
     }
 
-    @RequestMapping("/result")
-    public ModelAndView result(Model model, @RequestParam(value = "element") String element) {
-
+    // @RequestMapping(value = "/result", method = RequestMethod.POST)
+    @PostMapping(value = "/result")
+    public String result(Model model, @RequestParam(value = "element") String element) {
 
         // 前台传过来的矩阵字符串
         String[] oriStrs = element.split(";");
@@ -39,29 +39,22 @@ public class Controller {
         System.out.println("耗时:" + interval + "毫秒");
         model.addAttribute("result", result);
         model.addAttribute("interval", interval);
-        ModelAndView mv = new ModelAndView();
-        mv.setViewName("./WEB-INF/jsp/result.jsp");
-        return null;
+        return "result";
     }
 
-    // @RequestMapping("/compute")
     private String compute(BigInteger[][] numerator2s, BigInteger[][] denominator2s) {
 
         atService.arrayTrans(numerator2s, denominator2s);
         int plusMinusDivisor = (atService.getInvertedSequence() % 2 == 0) ? 1 : -1;
         BigInteger[] numeratorDiagonalEntries = atService.getNumeratorDiagonalEntries();
         BigInteger[] denominatorDiagonalEntries = atService.getDenominatorDiagonalEntries();
-        System.out.println(Arrays.toString(numeratorDiagonalEntries));
-        System.out.println(Arrays.toString(denominatorDiagonalEntries));
         BigInteger numerator = BigInteger.ONE;
         BigInteger denominator = BigInteger.ONE;
 
         int order = numerator2s.length;
         for (int i = 0; i < order; i++) {
-            System.out.println("艹腻骂...");
             numerator = numerator.multiply(numeratorDiagonalEntries[i]);
             denominator = denominator.multiply(denominatorDiagonalEntries[i]);
-            System.out.println("denominator = " + denominator);
         }
         if (numerator.equals(BigInteger.ZERO)) {
             return "0";
@@ -90,6 +83,13 @@ public class Controller {
                 return "-" + numerator.abs() + " / " + denominator.abs();
             }
         }
+    }
+
+    // @RequestMapping(value = "greeting", method = RequestMethod.POST)
+    @PostMapping(value = "greeting")
+    public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
+        model.addAttribute("name", name);
+        return "greeting";
     }
 
 }
