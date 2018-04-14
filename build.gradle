@@ -1,11 +1,10 @@
 group 'com.doublewinter0'
-version '1.0-SNAPSHOT'
+version '1.0'
 
 buildscript {
     repositories {
         mavenCentral()
         jcenter()
-
     }
     dependencies {
         classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.0.0.RELEASE'
