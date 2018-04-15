@@ -131,7 +131,8 @@
         // console.log(response.data.url);
         // 处理返回的数据
         var body = document.getElementById("body");
-        body.setAttribute('style', 'background-image: url(\'' + response.data.url + '\')');
+        var url = response.data.url.replace(/http/, "https");
+        body.setAttribute('style', 'background-image: url(\'' + url + '\')');
     }
 </script>
 
