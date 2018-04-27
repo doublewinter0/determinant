@@ -131,8 +131,14 @@
         // console.log(response.data.url);
         // 处理返回的数据
         var body = document.getElementById("body");
-        var url = response.data.url.replace(/http/, "https");
-        body.setAttribute('style', 'background-image: url(\'' + url + '\')');
+        var url_pc = response.data.url.replace(/http/, "https");
+        var url_mobile = url_pc.replace(/1920x1080/, "1080x1920");
+        if (window.innerHeight < window.innerWidth) {
+            body.setAttribute('style', 'background-image: url(\'' + url_pc + '\')');
+        } else {
+            body.setAttribute('style', 'background-image: url(\'' + url_mobile + '\')');
+
+        }
     }
 </script>
 

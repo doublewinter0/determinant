@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_9" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
-  </component>
-  <component name="RemoteRepositoriesConfiguration">
-    <remote-repository>
-      <option name="id" value="38807370-d154-4a77-b07a-b25af3b6afcc" />
-      <option name="name" value="38807370-d154-4a77-b07a-b25af3b6afcc" />
-      <option name="url" value="http://localhost:8081/nexus/content/groups/public/" />
-    </remote-repository>
   </component>
 </project>
