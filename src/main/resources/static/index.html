@@ -99,14 +99,14 @@
         <!--<label for="element">请输入元素</label>-->
         <div id="inputDiv">
             <input type="text" id="element" class="content" name="element"
-                   placeholder="你可以先在编辑器里编辑，然后粘贴到这里"/><br/>
-            <input type="submit" id="submit" class="content" value="云算一下"/>
+                   placeholder="你可以先在编辑器里编辑，然后粘贴到这里" autofocus /><br />
+            <input type="submit" id="submit" class="content" value="云算一下" />
         </div>
     </form>
 
     <p>
-        做这个小东西花费了我不少的精力，如果她帮到了你，我会感到非常高兴！<br/>
-        当然，如果能请我喝杯茶，我会更高兴（^_^）。（左边微信，右边支付宝）<br/>
+        做这个小东西花费了我不少的精力，如果她帮到了你，我会感到非常高兴！<br />
+        当然，如果能请我喝杯茶，我会更高兴（^_^）。（左边微信，右边支付宝）<br />
         如果你有更好的建议，可以点击右侧的反馈，我会认真阅读每条建议！
     </p>
 
@@ -117,7 +117,7 @@
          style="height: auto; width: auto;">
     <map name="github">
         <area shape="poly" coords="15,0,57,0,148,91,148,133"
-              alt="Fork me on Github" href="https://github.com/doublewinter0/determinant">
+              alt="Fork me on Github" href="https://github.com/doublewinter0/determinant" target="_blank">
     </map>
 </div>
 
@@ -131,7 +131,8 @@
 
     // 回调函数
     function erdong(response) {
-        // console.log(response.data.url);
+        // 调试代码
+        console.log(response);
         // 处理返回的数据
         var body = document.getElementById("body");
         var url_pc = response.data.url.replace(/http/, "https");
