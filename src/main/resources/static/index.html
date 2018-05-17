@@ -23,7 +23,7 @@
                     }
                 }
             }
-            alert("你的输入有误哦！>_<");
+            alert("你的输入有 误哦！>_<");
             return false;
         }
 
@@ -92,21 +92,21 @@
     </p>
     <img src="./imgs/interpretation.gif" alt="interpretation" style="height: 96px; width: 96px;"/>
     <p>
-        那么<span style=" background-color: white;color: blue">你只需在输入框输入：1,0,0,0,1,0,0,0,1;1,1,1,1,2,1,1,1,3</span>
+        那么<span style="background-color: white;color: blue">你只需在输入框输入：1,0,0,0,1,0,0,0,1;1,1,1,1,2,1,1,1,3</span>
     </p>
 
     <form action="/result" method="post" onsubmit="return check()">
         <!--<label for="element">请输入元素</label>-->
         <div id="inputDiv">
             <input type="text" id="element" class="content" name="element"
-                   placeholder="你可以先在编辑器里编辑，然后粘贴到这里" autofocus /><br />
-            <input type="submit" id="submit" class="content" value="云算一下" />
+                   placeholder="你可以先在编辑器里编辑，然后粘贴到这里" autofocus/><br/>
+            <input type="submit" id="submit" class="content" value="云算一下"/>
         </div>
     </form>
 
     <p>
-        做这个小东西花费了我不少的精力，如果她帮到了你，我会感到非常高兴！<br />
-        当然，如果能请我喝杯茶，我会更高兴（^_^）。（左边微信，右边支付宝）<br />
+        做这个小东西花费了我不少的精力，如果她帮到了你，我会感到非常高兴！<br/>
+        当然，如果能请我喝杯茶，我会更高兴（^_^）。（左边微信，右边支付宝）<br/>
         如果你有更好的建议，可以点击右侧的反馈，我会认真阅读每条建议！
     </p>
 
@@ -135,8 +135,8 @@
         console.log(response);
         // 处理返回的数据
         var body = document.getElementById("body");
-        var url_pc = response.data.url.replace(/http/, "https");
-        var url_mobile = url_pc.replace(/1920x1080/, "1080x1920");
+        var url_pc = response.data.url.replace("http", "https");
+        var url_mobile = url_pc.replace("1920x1080", "1080x1920");
         if (window.innerHeight < window.innerWidth) {
             body.setAttribute('style', 'background-image: url(\'' + url_pc + '\')');
         } else {
