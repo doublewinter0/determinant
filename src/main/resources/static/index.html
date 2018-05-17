@@ -6,48 +6,7 @@
     <meta name="author" content="任二冬">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>行列式在线</title>
-    <script src="./js/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./css/index.css"/>
-    <script>
-        function check() {
-            var element = document.getElementById("element");
-            var valueStr = element.value;
-            var values = valueStr.split(";");
-            if (values.length == 2) {
-                var numerators = values[0].split(",");
-                // console.log(numerators);
-                var denominators = values[1].split(",");
-                if (numerators.length == denominators.length) {
-                    if (numCheck(numerators) && nonZeroCheck(denominators)) {
-                        return true;
-                    }
-                }
-            }
-            alert("你的输入有 误哦！>_<");
-            return false;
-        }
-
-        function numCheck(param) {
-            var reg = new RegExp("^[0-9]*$");
-            for (var item in param) {
-                if (!reg.test(param[item])) {
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        function nonZeroCheck(param) {
-            console.log(param);
-            var reg = new RegExp("^[1-9]*$");
-            for (var item in param) {
-                if (!reg.test(param[item])) {
-                    return false;
-                }
-            }
-            return true;
-        }
-    </script>
     <style>
         #inputDiv {
             height: 75px;
@@ -127,8 +86,48 @@
 </div>
 
 <!-- JS 专属位置 -->
+<script src="./js/jquery-3.3.1.min.js"></script>
 <script>
+    function check() {
+        var element = document.getElementById("element");
+        var valueStr = element.value;
+        var values = valueStr.split(";");
+        if (values.length == 2) {
+            var numerators = values[0].split(",");
+            // console.log(numerators);
+            var denominators = values[1].split(",");
+            if (numerators.length == denominators.length) {
+                if (numCheck(numerators) && nonZeroCheck(denominators)) {
+                    return true;
+                }
+            }
+        }
+        alert("你的输入有 误哦！>_<");
+        return false;
+    }
 
+    function numCheck(param) {
+        var i, len;
+        for (i = 0, len = param.length; i < len; i++) {
+            if (!/^[0-9]*$/.test(param[i])) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function nonZeroCheck(param) {
+        console.log(param);
+        var i, len;
+        for (i = 0, len = param.length; i < len; i++) {
+            if (!/^[1-9]*$/.test(param[i])) {
+                return false;
+            }
+        }
+        return true;
+    }
+</script>
+<script>
     // 回调函数
     function erdong(response) {
         // 调试代码
@@ -145,7 +144,6 @@
         }
     }
 </script>
-
 <!--
 <script>
     window.onload = function () {
