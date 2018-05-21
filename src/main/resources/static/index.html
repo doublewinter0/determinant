@@ -40,7 +40,7 @@
     </style>
 </head>
 
-<body id="body">
+<body>
 
 <div id="essence">
     <!--It's my pleasure that you visit my website!-->
@@ -109,7 +109,7 @@
     function numCheck(param) {
         var i, len;
         for (i = 0, len = param.length; i < len; i++) {
-            if (!/^[0-9]*$/.test(param[i])) {
+            if (!/(^[0-9]*$)/.test(param[i])) {
                 return false;
             }
         }
@@ -120,7 +120,7 @@
         console.log(param);
         var i, len;
         for (i = 0, len = param.length; i < len; i++) {
-            if (!/^[1-9]*$/.test(param[i])) {
+            if (!/(^[1-9]*$)/.test(param[i])) {
                 return false;
             }
         }
@@ -133,14 +133,13 @@
         // 调试代码
         console.log(response);
         // 处理返回的数据
-        var body = document.getElementById("body");
         var url_pc = response.data.url.replace("http", "https");
         var url_mobile = url_pc.replace("1920x1080", "1080x1920");
+        alert(url_pc.toString());
         if (window.innerHeight < window.innerWidth) {
-            body.setAttribute('style', 'background-image: url(\'' + url_pc + '\')');
+            document.body.style.backgroundImage = "url(\"" + url_pc + "\")";
         } else {
-            body.setAttribute('style', 'background-image: url(\'' + url_mobile + '\')');
-
+            document.body.style.backgroundImage = "url(\"" + url_mobile + "\")";
         }
     }
 </script>
