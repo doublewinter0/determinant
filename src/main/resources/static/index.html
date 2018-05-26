@@ -88,6 +88,30 @@
 <!-- JS 专属位置 -->
 <script src="./js/jquery-3.3.1.min.js"></script>
 <script>
+    // 女神保佑   永无BUG
+    console.log("\n");
+    console.log("                       .::::.\n");
+    console.log("                     .::::::::.\n");
+    console.log("                    :::::::::::\n");
+    console.log("                 ..:::::::::::'\n");
+    console.log("              '::::::::::::'\n");
+    console.log("                .::::::::::\n");
+    console.log("           '::::::::::::::..\n");
+    console.log("                ..::::::::::::.\n");
+    console.log("              ``::::::::::::::::\n");
+    console.log("               ::::``:::::::::'        .:::.\n");
+    console.log("              ::::'   ':::::'       .::::::::.\n");
+    console.log("            .::::'      ::::     .:::::::'::::.\n");
+    console.log("           .:::'       :::::  .:::::::::' ':::::.\n");
+    console.log("          .::'        :::::.:::::::::'      ':::::.\n");
+    console.log("         .::'         ::::::::::::::'         ``::::.\n");
+    console.log("     ...:::           ::::::::::::'              ``::.\n");
+    console.log("    ```` ':.          ':::::::::'                  ::::..\n");
+    console.log("                       '.:::::'                    ':'````..\n");
+    console.log("                      女神保佑   永无BUG                      \n");
+    console.log("\n");
+</script>
+<script>
     function check() {
         var element = document.getElementById("element");
         var valueStr = element.value;
@@ -130,12 +154,11 @@
 <script>
     // 回调函数
     function erdong(response) {
-        // 调试代码
-        console.log(response);
+        // console.log(response);
         // 处理返回的数据
         var url_pc = response.data.url.replace("http", "https");
         var url_mobile = url_pc.replace("1920x1080", "1080x1920");
-        alert(url_pc.toString());
+        //  alert(url_pc.toString());
         if (window.innerHeight < window.innerWidth) {
             document.body.style.backgroundImage = "url(\"" + url_pc + "\")";
         } else {
