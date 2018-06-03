@@ -6,7 +6,7 @@
     <meta name="author" content="任二冬">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>行列式在线</title>
-    <link rel="stylesheet" type="text/css" href="./css/index.css"/>
+    <link rel="stylesheet" href="./css/index.css"/>
     <style>
         #inputDiv {
             height: 75px;
@@ -34,9 +34,11 @@
             /*border-width: 1px;*/
         }
 
-        p {
+       /*
+       p {
             font-size: 16px;
         }
+       */
     </style>
 </head>
 
@@ -90,26 +92,26 @@
 <script>
     // 女神保佑   永无BUG
     console.log("\n" +
-    "                       .::::.\n" +
-    "                     .::::::::.\n" +
-    "                    :::::::::::\n" +
-    "                 ..:::::::::::'\n" +
-    "              '::::::::::::'\n" +
-    "                .::::::::::\n" +
-    "           '::::::::::::::..\n" +
-    "                ..::::::::::::.\n" +
-    "              ``::::::::::::::::\n" +
-    "               ::::``:::::::::'        .:::.\n" +
-    "              ::::'   ':::::'       .::::::::.\n" +
-    "            .::::'      ::::     .:::::::'::::.\n" +
-    "           .:::'       :::::  .:::::::::' ':::::.\n" +
-    "          .::'        :::::.:::::::::'      ':::::.\n" +
-    "         .::'         ::::::::::::::'         ``::::.\n" +
-    "     ...:::           ::::::::::::'              ``::.\n" +
-    "    ```` ':.          ':::::::::'                  ::::..\n" +
-    "                       '.:::::'                    ':'````..\n" +
-    "                      女神保佑   永无BUG                      \n" +
-    "\n");
+        "                       .::::.\n" +
+        "                     .::::::::.\n" +
+        "                    :::::::::::\n" +
+        "                 ..:::::::::::'\n" +
+        "              '::::::::::::'\n" +
+        "                .::::::::::\n" +
+        "           '::::::::::::::..\n" +
+        "                ..::::::::::::.\n" +
+        "              ``::::::::::::::::\n" +
+        "               ::::``:::::::::'        .:::.\n" +
+        "              ::::'   ':::::'       .::::::::.\n" +
+        "            .::::'      ::::     .:::::::'::::.\n" +
+        "           .:::'       :::::  .:::::::::' ':::::.\n" +
+        "          .::'        :::::.:::::::::'      ':::::.\n" +
+        "         .::'         ::::::::::::::'         ``::::.\n" +
+        "     ...:::           ::::::::::::'              ``::.\n" +
+        "    ```` ':.          ':::::::::'                  ::::..\n" +
+        "                       '.:::::'                    ':'````..\n" +
+        "                      女神保佑   永无BUG                      \n" +
+        "\n");
 </script>
 <script>
     function check() {
@@ -151,6 +153,7 @@
         return true;
     }
 </script>
+<!--
 <script>
     // 回调函数
     function erdong(response) {
@@ -166,20 +169,23 @@
         }
     }
 </script>
-<!--
-<script>
-    window.onload = function () {
-        var script = document.createElement("script");
-        script.src = "https://bing.ioliu.cn/v1?callback=erdong";
-        document.body.insertBefore(script, document.body.lastChild);
-    };
-</script>
--->
 <script>
     $(function () {
         var script = document.createElement("script");
         script.src = "https://bing.ioliu.cn/v1?callback=erdong";
         document.body.insertBefore(script, document.body.lastChild);
+    })
+</script>
+-->
+<script>
+    $(function () {
+        if (window.innerHeight < window.innerWidth) {
+            document.body.style.backgroundImage = "url(\"" + "https://bing.ioliu.cn/v1/blur?w=1920&h=1080&r=10"
+                + "\")";
+        } else {
+            document.body.style.backgroundImage = "url(\"" + "https://bing.ioliu.cn/v1/blur?w=768&h=1280&r=10"
+                + "\")";
+        }
     })
 </script>
 <!-- JS 专属位置 -->

@@ -17,6 +17,14 @@ body {
     font-family: 微软雅黑, sans-serif;
 }
 
+p {
+    font-size: 1.2vw;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
 #essence {
     height: 60%;
     width: 78%;
