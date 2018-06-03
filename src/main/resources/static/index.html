@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="./css/index.css"/>
     <style>
         #inputDiv {
-            height: 75px;
+            width: auto;
+            height: 36px;
         }
 
         .content {
@@ -59,9 +60,8 @@
     <form action="/result" method="post" onsubmit="return check()">
         <!--<label for="element">请输入元素</label>-->
         <div id="inputDiv">
-            <input type="text" id="element" class="content" name="element"
-                   placeholder="你可以先在编辑器里编辑，然后粘贴到这里" autofocus/><br/>
-            <input type="submit" id="submit" class="content" value="云算一下"/>
+            <input type="text" id="element" class="content" name="element" placeholder="你可以先在编辑器里编辑，然后粘贴到这里"
+                   autofocus><input type="submit" id="submit" class="content" value="云算一下">
         </div>
     </form>
 
