@@ -115,14 +115,14 @@
 </script>
 <script>
     function check() {
-        var element = document.getElementById("element");
-        var valueStr = element.value;
-        var values = valueStr.split(";");
-        if (values.length == 2) {
-            var numerators = values[0].split(",");
+        let element = document.getElementById("element");
+        let valueStr = element.value;
+        let values = valueStr.split(";");
+        if (values.length === 2) {
+            let numerators = values[0].split(",");
             // console.log(numerators);
-            var denominators = values[1].split(",");
-            if (numerators.length == denominators.length) {
+            let denominators = values[1].split(",");
+            if (numerators.length === denominators.length) {
                 if (numCheck(numerators) && nonZeroCheck(denominators)) {
                     return true;
                 }
@@ -133,7 +133,7 @@
     }
 
     function numCheck(param) {
-        var i, len;
+        let i, len;
         for (i = 0, len = param.length; i < len; i++) {
             if (!/(^[0-9]*$)/.test(param[i])) {
                 return false;
@@ -144,7 +144,7 @@
 
     function nonZeroCheck(param) {
         console.log(param);
-        var i, len;
+        let i, len;
         for (i = 0, len = param.length; i < len; i++) {
             if (!/(^[1-9]*$)/.test(param[i])) {
                 return false;
@@ -159,8 +159,8 @@
     function erdong(response) {
         // console.log(response);
         // 处理返回的数据
-        var url_pc = response.data.url.replace("http", "https");
-        var url_mobile = url_pc.replace("1920x1080", "1080x1920");
+        let url_pc = response.data.url.replace("http", "https");
+        let url_mobile = url_pc.replace("1920x1080", "1080x1920");
         //  alert(url_pc.toString());
         if (window.innerHeight < window.innerWidth) {
             document.body.style.backgroundImage = "url(\"" + url_pc + "\")";
@@ -171,7 +171,7 @@
 </script>
 <script>
     $(function () {
-        var script = document.createElement("script");
+        let script = document.createElement("script");
         script.src = "https://bing.ioliu.cn/v1?callback=erdong";
         document.body.insertBefore(script, document.body.lastChild);
     })
