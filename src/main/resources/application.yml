@@ -1,0 +1,14 @@
+# 修改端口
+server:
+  port: 1413
+
+## 这个开发配置为false, 避免改了模板还要重启服务器
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    check-template-location: true
+    suffix: .html
+    encoding: UTF-8
+    servlet.content-type: text/html
+    mode: HTML5
+    ## cache: false  ## 开发配置为 true

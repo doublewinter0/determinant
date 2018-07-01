@@ -1,4 +1,4 @@
-group 'com.doublewinter0'
+group 'ren.erdong.det'
 version '1.0'
 
 buildscript {
@@ -18,8 +18,8 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 bootJar {
-    baseName = 'gs-spring-boot'
-    version = '0.1.0'
+    baseName = 'determinant'
+    version = '1.0.1'
 }
 
 sourceCompatibility = 1.8
@@ -31,9 +31,16 @@ repositories {
 }
 
 dependencies {
-    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.boot:spring-boot-starter-web', {
+        exclude module: 'spring-boot-starter-tomcat'
+    }
+    compile 'org.springframework.boot:spring-boot-starter-jetty'
     compile 'org.springframework.boot:spring-boot-starter-actuator'
     compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
     testCompile 'junit:junit'
     testCompile 'org.springframework.boot:spring-boot-starter-test'
+}
+
+task cleanOB(dependsOn: clean, type: Delete) {
+    delete 'out/'
 }

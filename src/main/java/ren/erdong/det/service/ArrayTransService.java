@@ -1,4 +1,4 @@
-package com.doublewinter0.application.service;
+package ren.erdong.det.service;
 
 import org.springframework.stereotype.Service;
 
@@ -67,7 +67,7 @@ public class ArrayTransService {
                 break;
             }
         }
-        // ******核心代码结束 ******//
+        // ****** 核心代码结束 ******//
 
         for (int i = 1; i < rowIndex.length; i++) {
             for (int j = 0; j < i; j++) {

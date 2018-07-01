@@ -1,13 +1,14 @@
-package com.doublewinter0.application.controller;
+package ren.erdong.det.controller;
 
-import com.doublewinter0.application.service.ArrayTransService;
-import com.doublewinter0.application.util.StringUtil;
+import org.springframework.web.bind.annotation.*;
+import ren.erdong.det.service.ArrayTransService;
+import ren.erdong.det.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
+import java.io.File;
+import java.io.IOException;
 import java.math.BigInteger;
 
 // @RestController 这两个有什么不同?
@@ -21,6 +22,15 @@ public class IController {
         this.atService = atService;
     }
 
+	@GetMapping(value = "/")
+	public String index() throws IOException {
+    	// TODO 关于 Java 路径的困惑
+		File file = new File("./customPath");
+		System.out.println("Path = " + file.getPath());
+		System.out.println("absPath = " + file.getAbsolutePath());
+		System.out.println("canonicalPath = " + file.getCanonicalPath());
+		return "../static/index";
+	}
     // @RequestMapping(value = "/result", method = RequestMethod.POST)
     @PostMapping(value = "/result")
     public String result(Model model, @RequestParam(value = "element") String element) {

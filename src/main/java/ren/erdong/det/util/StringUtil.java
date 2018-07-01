@@ -1,4 +1,4 @@
-package com.doublewinter0.application.util;
+package ren.erdong.det.util;
 
 import java.math.BigInteger;
 

@@ -1,4 +1,4 @@
-package com.doublewinter0.application;
+package ren.erdong.det;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -17,13 +17,13 @@ public class Application {
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
 
-        /*
-        System.out.println("Let's inspect the beans provided by Spring Boot:");
-        String[] beanNames = ctx.getBeanDefinitionNames();
-        Arrays.sort(beanNames);
-        System.out.println(beanNames.length);
-        System.out.println("over...");
-        */
+    /*
+    System.out.println("Let's inspect the beans provided by Spring Boot:");
+    String[] beanNames = ctx.getBeanDefinitionNames();
+    Arrays.sort(beanNames);
+    System.out.println(beanNames.length);
+    System.out.println("over...");
+    */
         };
     }
 }
