@@ -1,2 +1,4 @@
 .idea/gradle.xml
 .idea/artifacts/
+.idea/workspace.xml
+.gradle/
