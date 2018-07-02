@@ -3,12 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <title>出错啦!</title>
-    <link rel="icon" th:href="@{/imgs/error.ico}" type="image/x-icon" />
-    <link rel="shortcut icon" th:href="@{/imgs/error.ico}" type="image/x-icon" />
+    <link rel="icon" th:href="@{/imgs/icons/error.ico}" type="image/x-icon"/>
+    <link rel="shortcut icon" th:href="@{/imgs/icons/error.ico}" type="image/x-icon"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        html, code {
+            font: 15px/22px arial, sans-serif
+        }
+
+        html {
+            background: #fff;
+            color: #222;
+            padding: 15px
+        }
+
+        body {
+            margin: 7% auto 0;
+            max-width: 390px;
+            min-height: 180px;
+            padding: 30px 0 15px
+        }
+
+        * > body {
+            background: url('/imgs/error/robot.png') 100% 5px no-repeat;
+            padding-right: 205px
+        }
+
+        p {
+            margin: 30px 0 30px;
+            overflow: hidden
+        }
+
+        ins {
+            color: #FF0000;
+            text-decoration: none
+        }
+
+        @media screen and (max-width: 772px) {
+            body {
+                background: none;
+                margin-top: 0;
+                max-width: none;
+                padding-right: 0
+            }
+        }
+    </style>
 </head>
 <body>
-<div style="text-align: center">
-    <p style="font-size: xx-large">请不要执行<span style="color: #FF0000"> 骚操作 </span>哦!!!</p>
-</div>
+    <p style="font-size: larger">请不要执行
+        <ins> 骚操作</ins>
+        哦!!!
+    </p>
 </body>
 </html>
