@@ -1,4 +1,34 @@
-.idea/gradle.xml
-.idea/artifacts/
-.idea/workspace.xml
+## gradle ignore
 .gradle/
+
+## maven ignore
+target/
+*.jar
+*.war
+*.zip
+*.tar
+*.tar.gz
+
+## idea ignore
+out/
+.idea/*.xml
+.idea/modules/
+*.ipr
+*.iml
+*.iws
+
+## eclipse ignore
+.settings/
+.project
+.classpath
+
+## temp ignore
+*.log
+*.cache
+*.diff
+*.patch
+*.tmp
+
+## system ignore
+.DS_Store
+Thumbs.db

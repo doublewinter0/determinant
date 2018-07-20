@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="determinant">
+    <output-path>$PROJECT_DIR$/out/artifacts/determinant</output-path>
+    <root id="archive" name="determinant.jar">
+      <element id="javaee-facet-resources" facet="determinant/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="determinant" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
