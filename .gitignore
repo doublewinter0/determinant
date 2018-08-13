@@ -11,8 +11,7 @@ target/
 
 ## idea ignore
 out/
-.idea/*.xml
-.idea/modules/
+.idea/
 *.ipr
 *.iml
 *.iws
