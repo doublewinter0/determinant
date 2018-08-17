@@ -22,15 +22,18 @@ public class IController {
         this.atService = atService;
     }
 
-	@GetMapping(value = "/")
-	public String index() throws IOException {
-    	// TODO 关于 Java 路径的困惑
-		File file = new File("./customPath");
-		System.out.println("Path = " + file.getPath());
-		System.out.println("absPath = " + file.getAbsolutePath());
-		System.out.println("canonicalPath = " + file.getCanonicalPath());
-		return "../static/index";
-	}
+    @GetMapping(value = "/")
+    public String index() throws IOException {
+        // TODO 关于 Java 路径的困惑
+        File file = new File(".");
+        System.out.println("Path = " + file.getPath());
+        System.out.println("absPath = " + file.getAbsolutePath());
+        System.out.println("canonicalPath = " + file.getCanonicalPath());
+        System.out.println(IController.class.getResource("."));
+        System.out.println(IController.class.getResource("/"));
+        return "../static/index";
+    }
+
     // @RequestMapping(value = "/result", method = RequestMethod.POST)
     @PostMapping(value = "/result")
     public String result(Model model, @RequestParam(value = "element") String element) {
