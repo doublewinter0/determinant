@@ -1,0 +1,13 @@
+[Unit]
+Description=Determinant
+After=network.target
+
+[Service]
+Type=simple
+PIDFile=/usr/local/determinant/run/determinant.pid
+ExecStart=/usr/local/determinant/bin/startup.sh
+ExecStop=/bin/kill -s QUIT $MAINPID
+PrivateTmp=true
+
+[Install]
+WantedBy=default.target
