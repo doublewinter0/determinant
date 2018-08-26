@@ -23,14 +23,7 @@ public class IController {
     }
 
     @GetMapping(value = "/")
-    public String index() throws IOException {
-        // TODO 关于 Java 路径的困惑
-        File file = new File(".");
-        System.out.println("Path = " + file.getPath());
-        System.out.println("absPath = " + file.getAbsolutePath());
-        System.out.println("canonicalPath = " + file.getCanonicalPath());
-        System.out.println(IController.class.getResource("."));
-        System.out.println(IController.class.getResource("/"));
+    public String index() {
         return "../static/index";
     }
 
