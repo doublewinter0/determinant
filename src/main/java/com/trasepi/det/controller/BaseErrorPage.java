@@ -1,4 +1,4 @@
-package ren.erdong.det.controller;
+package com.trasepi.det.controller;
 
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;

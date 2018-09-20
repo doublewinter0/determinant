@@ -1,21 +1,14 @@
-group 'ren.erdong.det'
-version '1.0'
+// This line is for GOD
 
-buildscript {
-    repositories {
-        mavenCentral()
-        jcenter()
-    }
-    dependencies {
-        classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.0.0.RELEASE'
-    }
+plugins {
+    id 'java'
+    id 'idea'
+    id 'org.springframework.boot' version '2.0.2.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.6.RELEASE'
 }
 
-apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'idea'
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
+group 'ren.erdong.det'
+version '1.0'
 
 bootJar {
     baseName = 'determinant'
@@ -35,9 +28,9 @@ dependencies {
         exclude module: 'spring-boot-starter-tomcat'
     }
     compile 'org.springframework.boot:spring-boot-starter-jetty'
-    compile 'org.springframework.boot:spring-boot-starter-actuator'
+    // compile 'org.springframework.boot:spring-boot-starter-actuator'
     compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
-    testCompile 'junit:junit'
+    
     testCompile 'org.springframework.boot:spring-boot-starter-test'
 }
 

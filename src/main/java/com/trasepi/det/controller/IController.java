@@ -1,14 +1,12 @@
-package ren.erdong.det.controller;
+package com.trasepi.det.controller;
 
+import com.trasepi.det.service.ArrayTransService;
 import org.springframework.web.bind.annotation.*;
-import ren.erdong.det.service.ArrayTransService;
-import ren.erdong.det.util.StringUtil;
+import com.trasepi.det.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 
-import java.io.File;
-import java.io.IOException;
 import java.math.BigInteger;
 
 // @RestController 这两个有什么不同?

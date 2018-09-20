@@ -1,4 +1,4 @@
-package ren.erdong.det;
+package com.trasepi.det;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

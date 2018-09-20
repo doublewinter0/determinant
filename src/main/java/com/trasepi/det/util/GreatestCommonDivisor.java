@@ -1,4 +1,4 @@
-package ren.erdong.det.util;
+package com.trasepi.det.util;
 
 // 该工具类没有用 因为使用了 BigInteger 这个类
 public class GreatestCommonDivisor {
